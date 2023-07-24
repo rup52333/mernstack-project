@@ -19,16 +19,9 @@ app.use(`/`,Routes);
 const USERNAME = process.env.DB_USERNAME;
 const PASSWORD = process.env.DB_PASSWORD;
 
-const PORT=process.env.PORT || 3000;
+const PORT=3000;
+Connection(USERNAME,PASSWORD);
 
-const URL=process.env.MONGODB_URL || `mongodb://${USERNAME}:${PASSWORD}@ac-vbbcnpj-shard-00-00.3v4nnbz.mongodb.net:27017,ac-vbbcnpj-shard-00-01.3v4nnbz.mongodb.net:27017,ac-vbbcnpj-shard-00-02.3v4nnbz.mongodb.net:27017/STUDENTREGISTRATION?ssl=true&replicaSet=atlas-vulqe7-shard-0&authSource=admin&retryWrites=true&w=majority`
-Connection(URL);
-
-if(process.env.NODE_ENV==='production')
-{
-app.use(express.static(`client/build`));
-
-}
 
 app.listen(PORT,()=>{
 

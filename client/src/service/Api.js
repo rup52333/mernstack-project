@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 
-const URL="";
+const URL="http://localhost:3000";
 
 export const addStudent=async (data)=>{
 
